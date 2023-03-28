@@ -1,23 +1,37 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Video Player</title>
-        <style>
-            html,
-            body,
-            video {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                height: 100%;
-            }
-        </style>
-    </head>
-    <body>
-        <video 
-        autoplay
-        class="video-js vjs-default-skin" 
-        controls="" id="kfcavideoBaDep" 
-        width="100%" ><source type="application/x-mpegURL" src="https://addy.gooick.com/bd/main/output.m3u8" /></video>
-    </body>
-</html>
+<head>
+    <link href="https://vjs.zencdn.net/8.0.4/video-js.css" rel="stylesheet" />
+  
+    <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+    <!-- <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script> -->
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .video-js {
+          width: 100%;
+          height: 100%;
+        }
+      </style>
+      
+      
+  </head>
+  
+  <body>
+    <video id="my-video" class="video-js" controls preload="auto"
+  data-setup='{}'>
+  <source src="https://addy.gooick.com/bd/main/output.m3u8" type="application/x-mpegURL">
+</video>
+
+  
+    <script src="https://vjs.zencdn.net/8.0.4/video.min.js"></script>
+    <script>
+        var options = {
+          autoplay: true,
+          muted: true
+        };
+      
+        var player = videojs('my-video', options);
+      </script>
+  </body>
+  
